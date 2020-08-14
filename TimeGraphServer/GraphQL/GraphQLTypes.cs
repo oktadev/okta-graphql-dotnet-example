@@ -9,5 +9,9 @@ namespace TimeGraphServer.GraphQL
 
     public class TimeLogType : ObjectType<TimeLog>
     {
+        protected override void Configure(IObjectTypeDescriptor<TimeLog> descriptor)
+        {
+            descriptor.Authorize();
+        }
     }
 }
